@@ -21,7 +21,50 @@ fetch('https://www.datos.gov.co/resource/4t8v-ywmw.json')
                 heridos.push(datos_obtenidos.heridos);
                 fallecidos.push(datos_obtenidos.fallecidos);
                 tams1.push(tam1);
-                col1.push(color1);
-                col2.push(color2);
             }
         });
+
+        // Variables para las gráficas
+        var graf1 =
+        {
+            y: heridos,
+            x: eventos,
+            mode: 'markers',
+            marker: {
+                size: tams1,
+            },
+            name: 'Heridos'
+        };
+
+        var graf2 =
+        {
+            y: fallecidos,
+            x: eventos,
+            mode: 'markers',
+            marker: {
+                size: tams1,
+            },
+            name: 'Fallecidos'
+        };
+
+        var datosGraficas = [graf1, graf2];
+
+        // Estilos de la gráfica
+        var layout =
+        {
+            title: 'Emergencias 2020',
+            font: {
+                family: 'Times New Roman'
+            },
+            xaxis:
+            {
+                title: 'Eventos'
+            },
+            yaxis:
+            {
+                title: 'Heridos y Fallecidos'
+            }
+        };
+
+        Plotly.newPlot('div2', datosGraficas, layout);
+    });
