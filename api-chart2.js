@@ -3,6 +3,10 @@ var heridos = [];
 var fallecidos = [];
 const tam1 = 10;
 var tams1 = [];
+const color1 = 'rgb(83,255,211)';
+var col1 = [];
+const color2 = 'rgb(255,83,127)';
+var col2 = [];
 
 // Consumo de la API
 fetch('https://www.datos.gov.co/resource/4t8v-ywmw.json')
@@ -21,6 +25,8 @@ fetch('https://www.datos.gov.co/resource/4t8v-ywmw.json')
                 heridos.push(datos_obtenidos.heridos);
                 fallecidos.push(datos_obtenidos.fallecidos);
                 tams1.push(tam1);
+                col1.push(color1);
+                col2.push(color2);
             }
         });
 
@@ -32,6 +38,7 @@ fetch('https://www.datos.gov.co/resource/4t8v-ywmw.json')
             mode: 'markers',
             marker: {
                 size: tams1,
+                color: col1
             },
             name: 'Heridos'
         };
@@ -43,6 +50,7 @@ fetch('https://www.datos.gov.co/resource/4t8v-ywmw.json')
             mode: 'markers',
             marker: {
                 size: tams1,
+                color: col2
             },
             name: 'Fallecidos'
         };
