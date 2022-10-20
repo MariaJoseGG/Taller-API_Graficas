@@ -1,6 +1,7 @@
 var a_o = [];
 var camas_adultos=[];
-
+const color2 = 'rgb(255,83,127)';
+var col2 = [];
 
 // Consumo de la API
 fetch('https://www.datos.gov.co/resource/fa2g-cdft.json')
@@ -17,18 +18,23 @@ fetch('https://www.datos.gov.co/resource/fa2g-cdft.json')
             if (datos_obtenidos.a_o != undefined && datos_obtenidos.camas_adultos) {
                 a_o.push(datos_obtenidos.a_o);
                 camas_adultos.push(datos_obtenidos.camas_adultos);
+                col2.push(color2);
             }
         });
 
         var trace1 = {
             x: [2017,2018,2019,2020],
             y: camas_adultos,
-            type: 'scatter'
+            mode: 'lines',
+            marker: {
+              color: 'rgb(255,83,127)',
+              size: 12
+            }
           };
                 // Estilos de la gráfica
         var layout =
         {
-            title: 'TEMPERATURA',
+            title: 'PRESION',
             font: {
                 family: 'Times New Roman'
             },
@@ -38,11 +44,11 @@ fetch('https://www.datos.gov.co/resource/fa2g-cdft.json')
             },
             yaxis:
             {
-               title: 'TEMPERATURA'
+               title: 'PRESION'
             }
         };
           
           var data = [trace1];
           
-        Plotly.newPlot('div2', data,layout);
+        Plotly.newPlot('div1', data,layout);
     });

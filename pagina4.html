@@ -12,72 +12,57 @@
 </head>
 
 <body>
-    <header class="mb-5 p-3">
-        <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-          <div class="container-fluid">
-            <span class="navbar-brand mb-0 h1">SENSORS NETWORK</span>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Buscar"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-light" type="submit">Buscar</button>
-            </form>
-          </div>
+    <header>
+        <nav class="navbar navbar-light bg-info">
+            <div class="container-fluid">
+                <a class="navbar-brand font-monospace" href="#">
+                    <img src="grafico.png" alt="Gráfica" width="30" height="24" class="d-inline-block align-text-top">
+                    Gráficas
+                </a>
+            </div>
         </nav>
-      </header>
+    </header>
 
     <main>
         <div class="container">
-            <div class="row align-items-start" >
-              <div class="col " >
+            <div class="row align-items-start">
+              <div class="col ">
+                <div id="div1"></div>
                 <div id="div5"></div>   
               </div>
-              <div class="col" >
+              <div class="col ">
                   <div id="div6"></div>
+                  <div id="div2"></div>
               </div>
-              <div class="col" >
-                <center>
+              <div class="col ">
+                <div id="div3"></div>
                 <div id="div7"></div>
             </div>
             <br>
           </div>
         <br>
         <br>
-
+<!--
         <div class="container">
             <div class="row">
               <div class="col">
-                  <h1>PRESION</h1>
-                  <p>
-                      Este grafico representa los programas las presiones tomadas en una fecha determinada
-                  </p>
                   <div id="div1"></div>
               </div>
               <div class="col order-5">
-                      <h1>TEMPERATURA</h1>
-                      <p>
-                          Este grafico representa los programas las temperaturas tomadas en una fecha determinada
-                      </p>
                   <div id="div2"></div>
               </div>
               <div class="col order-1">
-                      <h1>HUMEDAD</h1>
-                      <p>
-                          Este grafico representa la humedad tomadas en una fecha determinada
-                      </p>
+
                   <div id="div3"></div>
               </div>
             </div>
             <br>
-          </div>
+          </div>-->
 
     </main>
 
     <footer>
-        <div class="card-footer text-center text-muted font-monospace" style="background-color:black; color: white";>
+        <div class="card-footer text-center text-muted font-monospace">
             &copy 2022 Company, Inc. All rights reserved
         </div>
     </footer>

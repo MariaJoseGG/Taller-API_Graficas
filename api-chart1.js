@@ -1,6 +1,7 @@
 var a_o = [];
-var camas_adultos=[];
-
+var camas_obstetricia=[];
+const color2 = 'rgb(255,83,127)';
+var col2 = [];
 
 // Consumo de la API
 fetch('https://www.datos.gov.co/resource/fa2g-cdft.json')
@@ -14,21 +15,26 @@ fetch('https://www.datos.gov.co/resource/fa2g-cdft.json')
         // Iteramos sobre cada dato
         datos_obtenidos.forEach(function agregar(datos_obtenidos) {
             //Si los datos son diferentes de vacío
-            if (datos_obtenidos.a_o != undefined && datos_obtenidos.camas_adultos) {
+            if (datos_obtenidos.a_o != undefined && datos_obtenidos.camas_obstetricia) {
                 a_o.push(datos_obtenidos.a_o);
-                camas_adultos.push(datos_obtenidos.camas_adultos);
+                camas_obstetricia.push(datos_obtenidos.camas_obstetricia);
+                col2.push(color2);
             }
         });
 
         var trace1 = {
             x: [2017,2018,2019,2020],
-            y: camas_adultos,
-            type: 'scatter'
+            y: camas_obstetricia,
+            mode: 'lines',
+            marker: {
+              color: 'rgb(255,83,127)',
+              size: 12
+            }
           };
                 // Estilos de la gráfica
         var layout =
         {
-            title: 'TEMPERATURA',
+            title: 'PRESION',
             font: {
                 family: 'Times New Roman'
             },
@@ -38,11 +44,11 @@ fetch('https://www.datos.gov.co/resource/fa2g-cdft.json')
             },
             yaxis:
             {
-               title: 'TEMPERATURA'
+               title: 'PRESION'
             }
         };
           
           var data = [trace1];
           
-        Plotly.newPlot('div2', data,layout);
+        Plotly.newPlot('div1', data,layout);
     });
